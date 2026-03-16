@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# Recipe Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## English Version
 
-## Available Scripts
+### Project Title
+Recipe Library
 
-In the project directory, you can run:
+### Short Description
+Recipe Library is a React Single Page Application for browsing, searching, sorting, saving, and creating recipes. The app is designed for students and busy people who want to choose a dish quickly and keep their favorite recipes in one place.
 
-### `npm start`
+### Features
+- View a dynamic list of recipes
+- Search recipes by title
+- Filter recipes by category
+- Sort recipes by newest, title, or cooking time
+- View full recipe details with ingredients and steps
+- Add a new recipe through a controlled form
+- Delete custom recipes
+- Save favorite recipes
+- Store recipes and favorites in `localStorage`
+- View recipe statistics generated with `reduce()`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### React and JavaScript Concepts Used
+- JSX
+- Components and props
+- `useState` and `useEffect`
+- Event handling
+- Controlled form inputs
+- Conditional rendering
+- Arrays and objects
+- `map()`, `filter()`, and `reduce()`
+- Destructuring
+- Spread operator
+- Import/export of modules
+- Callback functions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Project Structure
+- `src/App.js` - main application logic and state
+- `src/components/` - reusable UI components
+- `src/data/initialRecipes.js` - initial recipe data
+- `src/App.css`, `src/index.css`, `src/components/*.css` - styling
 
-### `npm test`
+### Main Components
+- `Header`
+- `MainContent`
+- `SearchBar`
+- `CategoryFilter`
+- `SortControl`
+- `FavoritesPanel`
+- `StatsPanel`
+- `RecipeList`
+- `RecipeCard`
+- `RecipeDetails`
+- `AddRecipeForm`
+- `Footer`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### How to Run the Project
+1. Install dependencies:
+```bash
+npm install
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Recipe Library
+Русская Версия
+Название проекта
+Recipe Library
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Краткое описание
+Recipe Library - это React SPA-приложение для просмотра, поиска, сортировки, сохранения и добавления рецептов. Приложение сделано для студентов и занятых людей, которым нужно быстро выбрать блюдо и хранить любимые рецепты в одном месте.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Возможности
+Просмотр динамического списка рецептов
+Поиск рецептов по названию
+Фильтр по категории
+Сортировка по новизне, названию и времени приготовления
+Просмотр полного рецепта: ингредиенты и шаги
+Добавление нового рецепта через управляемую форму
+Удаление пользовательских рецептов
+Сохранение рецептов в избранное
+Сохранение данных в localStorage
+Блок статистики, рассчитанный с помощью reduce()
+Какие темы React и JavaScript использованы
+JSX
+Компоненты и props
+useState и useEffect
+Обработка событий
+Controlled components
+Условный рендеринг
+Массивы и объекты
+map(), filter() и reduce()
+Destructuring
+Spread operator
+Import/export модулей
+Callback-функции
+Структура проекта
+src/App.js - основная логика приложения и состояние
+src/components/ - переиспользуемые компоненты интерфейса
+src/data/initialRecipes.js - начальные данные рецептов
+src/App.css, src/index.css, src/components/*.css - стили
+Основные компоненты
+Header
+MainContent
+SearchBar
+CategoryFilter
+SortControl
+FavoritesPanel
+StatsPanel
+RecipeList
+RecipeCard
+RecipeDetails
+AddRecipeForm
+Footer
+Как запустить проект
+Установить зависимости:
+npm install
 
-### `npm run eject`
+Запустить проект в режиме разработки:
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Собрать production-версию:
+npm run build
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Статус сборки
+Проект успешно собирается командой:
+npm run build

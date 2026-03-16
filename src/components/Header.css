@@ -1,0 +1,62 @@
+.header {
+  --font-ui: "Inter", "Segoe UI", sans-serif;
+  --font-title: "Playfair Display", Georgia, serif;
+  --title-weight: 700;
+  --ui-weight: 500;
+  background-color: #7b4a24;
+  color: #ffffff;
+  padding: 16px 24px;
+}
+
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+}
+
+.header__title {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: var(--title-weight);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__stat {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: var(--ui-weight);
+}
+
+@media (max-width: 760px) {
+  .header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
