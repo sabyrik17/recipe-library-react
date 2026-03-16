@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Recipe Library
 
 ## English Version
@@ -123,3 +124,6 @@ npm run build
 Статус сборки
 Проект успешно собирается командой:
 npm run build
+=======
+# recipe-library-react
+>>>>>>> 4b60ccdc938a60f8378e466b4ff5a3d9565d7548
