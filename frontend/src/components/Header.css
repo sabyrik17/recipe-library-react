@@ -1,0 +1,115 @@
+.header {
+  --font-ui: "Inter", "Segoe UI", sans-serif;
+  --font-title: "Playfair Display", Georgia, serif;
+  --title-weight: 700;
+  --ui-weight: 500;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 16px 24px 18px;
+}
+
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.header__top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+}
+
+.header__title {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: var(--title-weight);
+}
+
+.header__actions,
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.header__nav-link,
+.header__stat,
+.header__action-button {
+  border: 1px solid var(--header-chip-border);
+  background: var(--header-chip-bg);
+  color: var(--header-text);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: var(--ui-weight);
+  text-decoration: none;
+}
+
+.header__nav-link--active {
+  background: var(--accent-soft);
+  color: var(--header-active-text);
+  border-color: var(--accent-soft);
+}
+
+.header__action-button {
+  cursor: pointer;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.theme-toggle__status,
+.theme-toggle__button {
+  border: 1px solid var(--header-chip-border);
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: var(--ui-weight);
+}
+
+.theme-toggle__status {
+  padding: 8px 12px;
+  background: var(--header-chip-bg);
+  color: var(--header-text);
+}
+
+.theme-toggle__button {
+  padding: 8px 14px;
+  background: var(--accent-soft);
+  color: var(--header-active-text);
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .header__top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__actions {
+    width: 100%;
+  }
+}

@@ -1,129 +1,141 @@
-<<<<<<< HEAD
 # Recipe Library
 
-## English Version
+Recipe Library is now a fullstack React application with a real Express API, MongoDB database, JWT authentication, and CRUD operations for recipes.
 
-### Project Title
-Recipe Library
+## Stack
 
-### Short Description
-Recipe Library is a React Single Page Application for browsing, searching, sorting, saving, and creating recipes. The app is designed for students and busy people who want to choose a dish quickly and keep their favorite recipes in one place.
+- React 19
+- React Router v6
+- Context API
+- Custom hooks
+- Express
+- MongoDB with Mongoose
+- JWT authentication
 
-### Features
-- View a dynamic list of recipes
-- Search recipes by title
-- Filter recipes by category
-- Sort recipes by newest, title, or cooking time
-- View full recipe details with ingredients and steps
-- Add a new recipe through a controlled form
-- Delete custom recipes
-- Save favorite recipes
-- Store recipes and favorites in `localStorage`
-- View recipe statistics generated with `reduce()`
+## Features
 
-### React and JavaScript Concepts Used
-- JSX
-- Components and props
-- `useState` and `useEffect`
-- Event handling
-- Controlled form inputs
-- Conditional rendering
-- Arrays and objects
-- `map()`, `filter()`, and `reduce()`
-- Destructuring
-- Spread operator
-- Import/export of modules
-- Callback functions
+- User registration and login
+- Protected routes
+- Persistent auth session with token revalidation
+- Public recipe listing
+- Create, edit, and delete your own recipes
+- Search, filter, and sorting
+- Favorites persistence
+- Loading, error, empty, and success states
+- Settings page for API error simulation and recipe reseeding
 
-### Project Structure
-- `src/App.js` - main application logic and state
-- `src/components/` - reusable UI components
-- `src/data/initialRecipes.js` - initial recipe data
-- `src/App.css`, `src/index.css`, `src/components/*.css` - styling
+## Screenshots
 
-### Main Components
-- `Header`
-- `MainContent`
-- `SearchBar`
-- `CategoryFilter`
-- `SortControl`
-- `FavoritesPanel`
-- `StatsPanel`
-- `RecipeList`
-- `RecipeCard`
-- `RecipeDetails`
-- `AddRecipeForm`
-- `Footer`
+![Recipe Library home page](docs/screenshots/home.png)
 
-### How to Run the Project
+## Project Structure
+
+```text
+frontend/
+  public/
+  src/
+    components/
+    context/
+    hooks/
+    pages/
+    services/
+    utils/
+
+backend/
+  src/
+    config/
+    data/
+    middleware/
+    models/
+    routes/
+    utils/
+```
+
+## Environment
+
+The project uses separate environment files for frontend and backend.
+
+`backend/.env`:
+
+```env
+PORT=5000
+CLIENT_URL=http://localhost:3000
+MONGODB_URI=mongodb://127.0.0.1:27017/recipe-library
+JWT_SECRET=recipe-library-super-secret-key-change-me
+```
+
+`frontend/.env`:
+
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+## Run the Project
+
 1. Install dependencies:
+
 ```bash
 npm install
+```
 
+2. Start MongoDB locally.
+3. Start the backend:
 
-Recipe Library
-Русская Версия
-Название проекта
-Recipe Library
+```bash
+npm run server
+```
 
-Краткое описание
-Recipe Library - это React SPA-приложение для просмотра, поиска, сортировки, сохранения и добавления рецептов. Приложение сделано для студентов и занятых людей, которым нужно быстро выбрать блюдо и хранить любимые рецепты в одном месте.
+4. In another terminal, start the frontend:
 
-Возможности
-Просмотр динамического списка рецептов
-Поиск рецептов по названию
-Фильтр по категории
-Сортировка по новизне, названию и времени приготовления
-Просмотр полного рецепта: ингредиенты и шаги
-Добавление нового рецепта через управляемую форму
-Удаление пользовательских рецептов
-Сохранение рецептов в избранное
-Сохранение данных в localStorage
-Блок статистики, рассчитанный с помощью reduce()
-Какие темы React и JavaScript использованы
-JSX
-Компоненты и props
-useState и useEffect
-Обработка событий
-Controlled components
-Условный рендеринг
-Массивы и объекты
-map(), filter() и reduce()
-Destructuring
-Spread operator
-Import/export модулей
-Callback-функции
-Структура проекта
-src/App.js - основная логика приложения и состояние
-src/components/ - переиспользуемые компоненты интерфейса
-src/data/initialRecipes.js - начальные данные рецептов
-src/App.css, src/index.css, src/components/*.css - стили
-Основные компоненты
-Header
-MainContent
-SearchBar
-CategoryFilter
-SortControl
-FavoritesPanel
-StatsPanel
-RecipeList
-RecipeCard
-RecipeDetails
-AddRecipeForm
-Footer
-Как запустить проект
-Установить зависимости:
-npm install
+```bash
+npm run client
+```
 
-Запустить проект в режиме разработки:
-npm start
+## Available Scripts
 
-Собрать production-версию:
-npm run build
+- `npm start` - start the React frontend
+- `npm run client` - start the React frontend
+- `npm run server` - start the Express backend
+- `npm run build` - production build
+- `npm test` - run tests
+- `npm run format` - format source files with Prettier
+- `npm run format:check` - verify formatting
 
-Статус сборки
-Проект успешно собирается командой:
-npm run build
-=======
-# recipe-library-react
->>>>>>> 4b60ccdc938a60f8378e466b4ff5a3d9565d7548
+## API Routes
+
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
+- `GET /api/recipes`
+- `POST /api/recipes`
+- `PUT /api/recipes/:recipeId`
+- `DELETE /api/recipes/:recipeId`
+- `POST /api/recipes/seed`
+
+## Architecture Notes
+
+- Context API is the main state-management solution because the app has a few clear global concerns rather than one very large event-driven store.
+- `AuthContext`, `RecipesContext`, `ThemeContext`, and `FeedbackContext` keep authentication, recipe data, theme, and user feedback separate.
+- API calls live in `frontend/src/services`, so components do not contain fetch logic.
+- `useLocalStorage` handles persisted state rehydration for auth, filters, favorites, theme, and error simulation settings.
+- `useDebounce`, `useMemo`, `useReducer`, `useRef`, `useCallback`, and effect cleanup are used for search, derived data, form focus, feedback timing, and stable context actions.
+- The backend exposes real REST routes with Express and persists users/recipes in MongoDB through Mongoose.
+
+## Endterm Checklist
+
+- Clear folders: `components`, `pages`, `hooks`, `services`, `utils`
+- Minimum 5 routes, nested `/recipes/*` routes, dynamic `:recipeId`, protected routes, and custom 404 page
+- Context API with separated contexts
+- Real API integration with `fetch`, async/await, service layer, loading/error/empty states, and CRUD
+- localStorage persistence with rehydration
+- Responsive UI, validation messages, loading indicators, and success/error feedback
+- PropTypes validation for reusable components
+- Prettier formatting scripts
+
+## Verified
+
+- Frontend production build passes
+- Frontend test passes
+- Backend health endpoint responds
+- Real registration/login flow works
+- Real recipe create/delete flow works

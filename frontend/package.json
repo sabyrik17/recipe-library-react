@@ -1,37 +1,23 @@
 {
-  "name": "recipe-library",
+  "name": "recipe-library-frontend",
   "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "backend"
-  ],
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
-    "bcryptjs": "^3.0.3",
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.6.1",
-    "prop-types": "^15.8.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "prop-types": "^15.8.1",
     "react-router-dom": "^6.30.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "client": "cd frontend && react-scripts start",
-    "server": "node backend/src/index.js",
-    "start": "npm run client",
-    "build": "cd frontend && react-scripts build",
-    "test": "cd frontend && react-scripts test",
-    "format": "prettier --write \"frontend/src/**/*.{js,css}\" \"backend/src/**/*.js\" \"*.md\"",
-    "format:check": "prettier --check \"frontend/src/**/*.{js,css}\" \"backend/src/**/*.js\" \"*.md\"",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,8 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "prettier": "^3.8.3"
   }
 }
